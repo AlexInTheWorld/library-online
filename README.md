@@ -1,6 +1,8 @@
 **User stories.**
 ---
 
+Personal online library: project part of FCC module "Quality Assurance".
+___
 1. Provide your own project, not the example URL.
 
 2. Functioning POST request to /api/books with title as part of the form data to add a book. The returned response will be an object with the title and a unique _id as keys. If title is not included in the request, the returned response should be the string missing required field title.
@@ -15,5 +17,8 @@
 
 7. Functioning DELETE request to /api/books to delete all books in the database. The returned response will be the string 'complete delete successful if successful.
 
+9. All 10 functional tests required are complete and passing.
 
+___
 
+[See app live](https://personal-library-modified.glitch.me)

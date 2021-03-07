@@ -1,0 +1,39 @@
+<!-- Show all comments for a specific book. Data pulled from DB. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personal Library</title>
+  <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/000000/address-book.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body style="border: none;">
+  <header>
+    <div id="title-container">
+      <div id="left-symbol"></div>
+      <h1><%= bookobj.title %></h1>
+      <div id="right-symbol"></div>
+    </div>
+    
+  </header>
+  <div id="comments">
+  <% for (let i = 0; i < bookobj.commentcount; i++) { %>
+    <div class="comment-container">
+      <p id="date<%= i %>" class="date"></p>
+      <p class="user-comment"><%= bookobj.comments[i].comment %></p>
+    </div>
+    <hr>
+  <% } %>
+  </div>
+</body>
+<script>
+  var date_p;
+  <% for (let i = 0; i < bookobj.commentcount; i++) { %>
+    date_p = document.getElementById("date<%= i %>");
+    date_p.textContent = new Date(Number("<%= bookobj.comments[i].posted_on %>")).toLocaleString();   
+  <% } %>
+</script>
+</html>

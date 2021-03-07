@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personal Library</title>
+  <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/000000/address-book.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<header>
+  <h1>Personal Library</h1>
+</header>
+<br>
+<div id="posting">
+  <h2>Post your favourite book here</h2>
+  <form action="#" id="post-book-form">
+    <h4>Form for book data</h4>
+    <label for="title">Book Title</label>
+    <div class="form-substructure">
+      <input type="text" id="title" name="title" value="" maxlength="100">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<div id="responseMessage"></div>
+<hr>
+<div id="book-issue-msg"></div>
+<div id="display-books" class="main-content">
+  <% if (books.length > 0) { %>
+    <% for (let i = 0; i < books.length; i++) { %>
+      <div class="book-container">
+        <p class="book-title"><%= books[i].title %></p>
+        <form action="/books/<%= books[i]._id %>" class="comment-book-form" method="post">
+          <div class="form-substructure">
+            <input type="text" placeholder="add a comment" name="comment" maxlength="1000" required>
+            <button type="submit">Add</button>
+          </div>
+        </form>
+        <% if (books[i].comments.length > 0) { %>
+        <div class="two-latest-comments">
+          <p class="latest_comment"><%= books[i].comments[0].comment.length > 20 ? books[i].comments[0].comment.slice(0, 20) + "..." : books[i].comments[0].comment %></p>
+          <% if (books[i].comments.length > 1) { %>
+          <p class="second2latest_comment"><%= books[i].comments[1].comment.length > 20 ? books[i].comments[1].comment.slice(0, 20) + "..." : books[i].comments[1].comment %></p>
+          <a href="/comments/<%= books[i]._id %> %>"><button type="button">See all comments</button></a>  
+          <% } %>
+        </div>
+        <% } %>
+        <!-- enctype must be set to the type parsed before methodOverride() -->
+        <form action="/books/<%= books[i]._id %>" method="post" class="delete-book-form">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="delete-book-btn">Delete book</button>
+        </form>
+      </div>
+    <% } %>
+  <% } else {%>
+  <p id="nobooks-message" class="main-content">No books in the library yet. Add a book title to enlarge out modest library</p>
+  <% } %>
+</div>
+<hr>
+
+<form action="/books" method="post" class="delete-all-form">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit" id="deleteAll-btn">Delete all books</button>
+</form>
+  
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"
+        integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+        crossorigin="anonymous"></script>
+<script src="/public/index.js"></script>
+
+</body>
+</html>

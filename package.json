@@ -1,0 +1,31 @@
+{
+	"name": "Personal Library -ultimate",
+	"version": "1.0.0",
+	"description": "A modification of the Personal Library project for FCC",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"body-parser": "^1.15.2",
+		"dotenv": "^8.2.0",
+		"ejs": "^3.1.5",
+		"express": "^4.14.0",
+		"method-override": "^3.0.0",
+		"mongodb": "^3.6.2",
+		"zombie": "^6.1.4"
+	},
+	"engines": {
+		"node": "^12.*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/freeCodeCamp/boilerplate-project-library"
+	},
+	"keywords": [
+		"node",
+		"hyperdev",
+		"express"
+	],
+	"license": "MIT"
+}

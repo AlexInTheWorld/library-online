@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+body {
+  position: relative;
+  margin: 0;
+  border: 5px solid olive;
+  text-align: center;
+}
+
+#post-book-form {
+  border: 1px solid beige;
+  margin: 10px auto;
+  max-width: 450px;
+}
+
+form {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-subsctructure {
+  display: flex;
+  flex-directiion: row;
+  flex-wrap: wrap;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+#responseMessage {
+  color: #eb4034;
+}
+
+hr {
+  margin: 0 auto;
+  width: 60vw;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fsimple_pattern.jpg?v=1608490120040);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.book-container {
+  background-color: #a1cacc;
+  max-width: 23ch;
+  height: 238px;
+  margin: 8px;
+  border-left: 3px solid #e0bd02;
+  border-radius: 0px 10px 3px 0px;
+}
+
+#nobooks-message {
+  color: #eb4034;
+  font-size: 1.4rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+#info-message {
+  color: black;
+  width: 40vw;
+  z-index: 10;
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  background: rgba(240, 245, 198, 0.9);
+  border-radius: 4px;
+  border: 3px solid #e67a5e;
+  padding: 10px;
+}
+
+span {
+  color: blue;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+.two-latest-comments {
+  background-color: #a1cacc;
+  background-image: linear-gradient(#a1cacc, rgba(255,255,255,1));
+  max-width: 20ch;
+  margin: 0 auto;
+  border-radius: 0px 0px 15px 15px;
+  border-bottom: 3px solid #457173;
+}
+
+button[type="button"] {
+  border-top: 1px dotted black;
+  border-left: 1px dotted black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background: white;
+  cursor: pointer;
+}
+
+.second2latest_comment {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.8rem;
+}
+
+.corner {
+  z-index: -1;
+}
+
+#top-left {
+  background-color: transparent;
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fcorner_pattern_topleft.jpg?v=1608485528318);
+  background-repeat: round;
+  background-size: contain;
+}
+
+#top-right {
+  background-color: transparent;
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fcorner_pattern_topright.png?v=1608485526954);
+  background-repeat: round;
+  background-size: contain;
+}
+
+#bottom-left {
+  background-color: transparent;
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fcorner_pattern_bottomleft.jpg?v=1608485529767);
+  background-repeat: round;
+  background-size: contain;
+}
+
+#bottom-right {
+  background-color: transparent;
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fcorner_pattern_bottomright.jpg?v=1608485528702);
+  background-repeat: round;
+  background-size: contain;
+}
+
+.main-content {
+  margin-bottom: 15vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#title-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  font-family: 'Dancing Script', cursive;
+  border-top: 3px solid lightgray;
+  border-bottom: 4px solid lightgray;
+}
+
+#left-symbol, #right-symbol {
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#left-symbol {
+  background-position: right;
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fd20.jpg?v=1608468181879);
+}
+
+#right-symbol {
+  background-image: url(https://cdn.glitch.com/0094494d-eabc-4c0e-b054-ea4779c89c81%2Fd20_inverted.jpg?v=1608485553916);
+}
+
+#deleteAll-btn {
+  border: 1.5px solid #e67a5e;
+  background: #deccc8;
+  color: #520f00;
+}
+
+.comment-container {
+  text-align: left;
+  margin: 20px 10px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+
+@media only screen and (max-width: 500px) {
+  #info-message {
+    max-width: 500px;
+    height: auto;
+  }
+  
+  .comment-container {
+    margin: 0;
+    grid-template-columns: 1fr;
+  }
+  
+  #date {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
